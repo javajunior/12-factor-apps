@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express()
 
-let mongoHost = "localhost";
-let mongoPort = 27017;
-let dbName = "test";
-let appPort = 3000;
+let mongoHost = process.env.MONGO_HOST;
+let mongoPort = process.env.MONGO_PORT;
+let dbName = process.env.MONGO_DB;
+let appPort = process.env.PORT;
 
 app.use(bodyParser.json());
 console.log('App started!');
