@@ -1,0 +1,27 @@
+{
+  "name": "hotel-booking-12-factor-app",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u00001\u00002\u0000-\u0000f\u0000a\u0000c\u0000t\u0000o\u0000r\u0000-\u0000a\u0000p\u0000p\u0000s\u0000\r\u0000 \u0000#\u0000 \u00001\u00002\u0000-\u0000f\u0000a\u0000c\u0000t\u0000o\u0000r\u0000-\u0000a\u0000p\u0000p\u0000s\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javajunior/12-factor-apps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javajunior/12-factor-apps/issues"
+  },
+  "homepage": "https://github.com/javajunior/12-factor-apps#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.2"
+  }
+}
