@@ -26,25 +26,24 @@ app.use((err, req, res, next) => {
 let url = `mongodb://${mongoHost}:${mongoPort}/${dbName}`;
 
 (async () => {
-  let trials = 10;
-  for (let i = 0; i < trials; i ++ ) {
-    try {
-      await mongoose.connect(url, {
-        "useNewUrlParser": true,
-        "useUnifiedTopology": true,
-        'serverSelectionTimeoutMS': 1000
-      })
-      console.log("Database connected!")
-      mongoose.Promise = global.Promise;
-    }
-    catch (e) {
-      console.log("Impossible to connect to database: test", (i+1), "/", trials)
-    }
-  }  
+  try {
+    await mongoose.connect(url, {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true,
+      'serverSelectionTimeoutMS': 1000
+    })
+    console.log("Database connected!")
+    mongoose.Promise = global.Promise;
+  }
+  catch (e) {
+    console.log(`Impossible to connect to database: ${dbName}`);
+    process.exit();
+  }
+
+  app.listen(appPort, () => {
+    console.log(`Example app listening at http://localhost:${appPort}`)
+  })
 })()
 
-app.listen(appPort, () => {
-  console.log(`Example app listening at http://localhost:${appPort}`)
-})
 
 
